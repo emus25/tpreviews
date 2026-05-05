@@ -8,10 +8,12 @@
 
   <style>
     :root {
-      --main-background: rgb(29, 54, 68);
-      --button-colour: rgb(185, 139, 98);
+      --main-background: #3f3f3f;
+      --card-background: #343434;
+      --button-colour: #20c7a6;
+      --button-hover: #1ab394;
       --text-colour: #ffffff;
-      --soft-text: rgba(255, 255, 255, 0.88);
+      --soft-text: rgba(255, 255, 255, 0.82);
     }
 
     * {
@@ -38,11 +40,17 @@
       width: 100%;
       max-width: 460px;
       text-align: center;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: var(--card-background);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 26px;
       overflow: hidden;
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .cover {
+      background: #2f2f2f;
+      padding: 22px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.85);
     }
 
     .cover img {
@@ -75,16 +83,17 @@
       margin: 0 auto 24px;
       padding: 16px 18px;
       border-radius: 16px;
-      background: #ffffff;
-      color: var(--main-background);
+      background: var(--button-colour);
+      color: var(--text-colour);
       text-decoration: none;
       font-weight: 800;
       font-size: 16px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      transition: 0.2s ease;
     }
 
     .save-contact span {
-      color: var(--button-colour);
+      color: #ffffff;
     }
 
     .stars {
@@ -113,12 +122,13 @@
       font-weight: 700;
       font-size: 17px;
       transition: 0.2s ease;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
     }
 
     .review-button:hover,
     .save-contact:hover {
       transform: translateY(-2px);
+      background: var(--button-hover);
     }
 
     .button-left {
@@ -131,7 +141,7 @@
       width: 34px;
       height: 34px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.18);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -146,6 +156,10 @@
       h1 {
         font-size: 24px;
       }
+
+      .cover {
+        padding: 18px;
+      }
     }
   </style>
 </head>
@@ -154,14 +168,12 @@
   <main class="page">
     <section class="card">
 
-      <!-- CHANGE THIS IMAGE FILE NAME IF NEEDED -->
       <div class="cover">
         <img src="./cover (10).png" alt="TP Improvements logo">
       </div>
 
       <div class="content">
 
-        <!-- SAVE CONTACT BUTTON -->
         <a class="save-contact" href="tp.vcf" download>
           Click here to <span>keep in contact with us</span>
         </a>
@@ -176,7 +188,6 @@
 
         <div class="review-links">
 
-          <!-- REPLACE THIS WITH TP HOME IMPROVEMENTS GOOGLE REVIEW LINK -->
           <a class="review-button" href="https://g.page/r/CYzspMX8xq-WEAI/review" target="_blank" rel="noopener noreferrer">
             <span class="button-left">
               <span class="icon">G</span>
@@ -185,7 +196,6 @@
             <span class="arrow">›</span>
           </a>
 
-          <!-- DELETE THIS BUTTON IF THEY DO NOT USE CHECKATRADE -->
           <a class="review-button" href="https://www.checkatrade.com/give-feedback/trades/tpimprovementsltd" target="_blank" rel="noopener noreferrer">
             <span class="button-left">
               <span class="icon">✓</span>
@@ -194,7 +204,6 @@
             <span class="arrow">›</span>
           </a>
 
-          <!-- DELETE THIS BUTTON IF THEY DO NOT USE TRUSTPILOT -->
           <a class="review-button" href="https://public.trustindex.io/review/write/tpimprovements.com" target="_blank" rel="noopener noreferrer">
             <span class="button-left">
               <span class="icon">★</span>
